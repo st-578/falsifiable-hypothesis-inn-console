@@ -1,0 +1,23 @@
+{
+  "name": "falsifiable-hypothesis-inn-console",
+  "displayName": "Falsifiable Hypothesis Inn Console",
+  "description": "反証可能な仮説を生成・フォーク・X投稿まで一括管理するVSCodeコンソール",
+  "version": "0.1.0",
+  "publisher": "st-578",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Other"],
+  "activationEvents": ["onCommand:falsifiable.generate", "onCommand:falsifiable.fork", "onCommand:falsifiable.postToX"],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "falsifiable.generate", "title": "Falsifiable: 新規仮説生成" },
+      { "command": "falsifiable.fork", "title": "Falsifiable: この仮説をフォーク提案" },
+      { "command": "falsifiable.postToX", "title": "Falsifiable: X投稿テンプレート生成" }
+    ],
+    "menus": {
+      "explorer/context": [
+        { "command": "falsifiable.generate", "group": "navigation" }
+      ]
+    }
+  }
+}
